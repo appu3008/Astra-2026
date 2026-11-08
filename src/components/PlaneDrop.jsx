@@ -22,75 +22,53 @@ function PlaneSvg() {
   );
 }
 
-function NameBoard() {
+function NameBanner() {
   return (
-    <svg viewBox="0 0 84 30" shape-rendering="crispEdges">
+    <svg viewBox="0 0 120 28" shape-rendering="crispEdges">
       {/* board */}
-      <rect x="0" y="0" width="84" height="30" fill="#ff9900" />
-      <rect x="2" y="2" width="80" height="26" fill="#0b1020" />
-      {/* corner screws */}
-      <rect x="4" y="4" width="2" height="2" fill="#ffca73" />
-      <rect x="78" y="4" width="2" height="2" fill="#ffca73" />
-      <rect x="4" y="24" width="2" height="2" fill="#ffca73" />
-      <rect x="78" y="24" width="2" height="2" fill="#ffca73" />
-      {/* the name, force-fitted to the board */}
+      <rect x="0" y="0" width="120" height="28" fill="#ff9900" />
+      <rect x="2" y="2" width="116" height="24" fill="#0b1020" />
+      {/* tie points */}
+      <rect x="7" y="3" width="2" height="2" fill="#ffca73" />
+      <rect x="59" y="3" width="2" height="2" fill="#ffca73" />
+      <rect x="111" y="3" width="2" height="2" fill="#ffca73" />
+      {/* the wordmark — matches the hero title colours */}
       <text
-        x="42"
-        y="19.4"
-        textAnchor="middle"
-        textLength="72"
+        x="8"
+        y="17.8"
+        textLength="56"
         lengthAdjust="spacingAndGlyphs"
         fontFamily="Silkscreen, monospace"
-        fontSize="8.4"
+        fontSize="11"
         fill="#f4f6f6"
       >
-        ASTRA-2026
+        ASTRA
       </text>
-      {/* accent bar */}
-      <rect x="6" y="23" width="72" height="2" fill="#ff9900" />
+      <text
+        x="64"
+        y="17.8"
+        textLength="48"
+        lengthAdjust="spacingAndGlyphs"
+        fontFamily="Silkscreen, monospace"
+        fontSize="11"
+        fill="#c4b5fd"
+      >
+        -2026
+      </text>
     </svg>
-  );
-}
-
-function TowedBoard() {
-  return (
-    <div className="planefly__towed">
-      <div className="planefly__towed-board">
-        <NameBoard />
-      </div>
-    </div>
   );
 }
 
 export default function PlaneDrop() {
   return (
     <div className="planefly" aria-hidden="true">
-      {/* intro pass (one-shot) — plane tows the ASTRA-2026 sign and releases it mid-screen */}
-      <div className="planefly__track planefly__track--intro">
-        <PlaneSvg />
-        <TowedBoard />
-      </div>
-
-      {/* ambient loop — keeps dropping small name boards */}
       <div className="planefly__track">
-        <PlaneSvg />
-      </div>
-
-      {/* intro board — falls, opens, lands and holds, then fades */}
-      <div className="planefly__fall">
-        <div className="planefly__sway">
-          <div className="planefly__un">
-            <NameBoard />
+        <div className="planefly__unit">
+          <div className="planefly__line" />
+          <div className="planefly__banner">
+            <NameBanner />
           </div>
-        </div>
-      </div>
-
-      {/* ambient board */}
-      <div className="planefly__poster">
-        <div className="planefly__sway">
-          <div className="planefly__un">
-            <NameBoard />
-          </div>
+          <PlaneSvg />
         </div>
       </div>
     </div>
