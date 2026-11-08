@@ -175,8 +175,7 @@ export const CONTENT = {
   },
 
   links: {
-    // Paste your Google Form link here when ready.
-    registration: "",
+    registration: "https://docs.google.com/forms/d/e/1FAIpQLSejOFo9NQeZNOFJGDxD68gBLo_YGNflYka8OBvHOeAbSyLI5A/viewform",
     map: "https://www.google.com/maps/search/?api=1&query=RDS+Campus+Laxmi+Nagar+Near+BEO+Office+Mudalgi+591312",
   },
 };
