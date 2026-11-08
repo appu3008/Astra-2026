@@ -12,9 +12,9 @@ function Ledger({ data, variant }) {
         <h3 className="led__grades">{data.grades}</h3>
         {data.basedOn ? (
           <p className="led__based">◆ Based on: {data.basedOn}</p>
-        ) : (
+        ) : !hasRows ? (
           <p className="led__based led__based--none">Pattern will be announced soon</p>
-        )}
+        ) : null}
       </div>
 
       {hasRows ? (

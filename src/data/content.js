@@ -110,18 +110,28 @@ export const CONTENT = {
     cat1: {
       grades: "GRADE IV & V",
       basedOn: "Navodaya Vidyalaya Selection Test pattern",
-      // The EVS row's marks were not provided — add them (and other rows) here.
       rows: [
         { subject: "Mental Ability", questions: 20, marks: 25 },
-        { subject: "Environmental Studies (EVS)", questions: 20, marks: null },
+        { subject: "Environmental Studies (EVS)", questions: 20, marks: 25 },
+        { subject: "Mathematics", questions: 20, marks: 25 },
+        { subject: "Language", questions: 20, marks: 25 },
       ],
-      note: "Mark distribution will be updated shortly.",
+      note: "Each question carries 1.25 marks. Total: 80 questions, 100 marks.",
     },
     cat2: {
       grades: "GRADE IX & X",
       basedOn: null,
-      rows: [],
-      note: "Subject-wise question and mark distribution will be announced soon.",
+      rows: [
+        { subject: "Mathematics", questions: 20, marks: 20 },
+        { subject: "Science", questions: 20, marks: 20 },
+        { subject: "Social Science (SST)", questions: 10, marks: 10 },
+        { subject: "English", questions: 10, marks: 10 },
+        { subject: "Kannada", questions: 10, marks: 10 },
+        { subject: "General Knowledge (GK)", questions: 10, marks: 10 },
+        { subject: "Mental Ability", questions: 10, marks: 10 },
+        { subject: "Current Affairs", questions: 10, marks: 10 },
+      ],
+      note: "Each question carries 1 mark. Total: 100 questions, 100 marks.",
     },
   },
 
