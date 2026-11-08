@@ -83,6 +83,11 @@ export default function Footer({ winners = false }) {
             </p>
             <p className="devband__name">Mallikarjun Sattigeri</p>
             <p className="devband__role">Cybersecurity Researcher in Progress</p>
+            <p className="devband__tags">
+              {["Ethical Hacking", "Bug Hunting", "Web Security", "Network Security"].map((t) => (
+                <i key={t}>{t}</i>
+              ))}
+            </p>
           </div>
         </div>
 

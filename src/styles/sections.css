@@ -1252,3 +1252,19 @@
   .devband { padding: 24px 0 20px; }
   .devband__name { font-size: 1.2rem; }
 }
+.devband__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 0;
+  margin-top: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(244, 246, 246, 0.42);
+}
+.devband__tags i { display: inline-flex; }
+.devband__tags i + i::before { content: "|"; margin: 0 9px; color: rgba(34, 211, 238, 0.35); }
