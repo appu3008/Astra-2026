@@ -184,6 +184,14 @@ export const CONTENT = {
     office: ["Rural Development Society (RDS)", "RDS Campus, Laxmi Nagar", "Near BEO Office, Mudalgi - 591312"],
   },
 
+  // Winners page — flip `published` to true on results day and fill `rows`.
+  winners: {
+    published: false,
+    rows: [
+      // { rank: "1st — Grade IV & V", name: "Student name", school: "School name", amount: "₹25,000" },
+    ],
+  },
+
   links: {
     registration: "https://docs.google.com/forms/d/e/1FAIpQLSejOFo9NQeZNOFJGDxD68gBLo_YGNflYka8OBvHOeAbSyLI5A/viewform",
     map: "https://www.google.com/maps/search/?api=1&query=RDS+Campus+Laxmi+Nagar+Near+BEO+Office+Mudalgi+591312",

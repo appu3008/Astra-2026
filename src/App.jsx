@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 import Splash from "./components/Splash.jsx";
+import Winners from "./components/Winners.jsx";
 import Hero from "./components/Hero.jsx";
 import About from "./components/About.jsx";
 import Eligibility from "./components/Eligibility.jsx";
@@ -13,6 +14,8 @@ import useReveal from "./hooks/useReveal.js";
 
 export default function App() {
   useReveal(1700);
+
+  if (window.location.pathname.startsWith("/winners")) return <Winners />;
 
   return (
     <>

@@ -5,11 +5,12 @@ import useActiveSection from "../hooks/useActiveSection.js";
 
 const IDS = CONTENT.nav.map((l) => l.id);
 
-export default function Navbar() {
+export default function Navbar({ winners = false }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const active = useActiveSection(IDS);
   const form = CONTENT.links.registration;
+  const href = (id) => (winners ? `/#${id}` : `#${id}`);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -37,7 +38,7 @@ export default function Navbar() {
         Register Now
       </a>
     ) : (
-      <a className={cls} href="#contact" onClick={() => setOpen(false)}>
+      <a className={cls} href={winners ? "/#contact" : "#contact"} onClick={() => setOpen(false)}>
         Register Now
       </a>
     );
@@ -46,7 +47,7 @@ export default function Navbar() {
     <>
       <header className={`nav ${scrolled ? "nav--scrolled" : ""} ${open ? "nav--open" : ""}`}>
         <div className="container nav__inner">
-          <a href="#home" className="nav__brand">
+          <a href={winners ? "/#home" : "#home"} className="nav__brand">
             <span className="nav__crest" aria-hidden="true">
               <GraduationCap />
             </span>
@@ -60,10 +61,13 @@ export default function Navbar() {
 
           <nav className="nav__links" aria-label="Primary">
             {CONTENT.nav.map((l) => (
-              <a key={l.id} href={`#${l.id}`} className={`nav__link ${active === l.id ? "is-active" : ""}`}>
+              <a key={l.id} href={href(l.id)} className={`nav__link ${active === l.id ? "is-active" : ""}`}>
                 {l.label}
               </a>
             ))}
+            <a href="/winners" className={`nav__link ${winners ? "is-active" : ""}`}>
+              Winners
+            </a>
           </nav>
 
           <div className="nav__cta">
@@ -97,7 +101,7 @@ export default function Navbar() {
           {CONTENT.nav.map((l, i) => (
             <a
               key={l.id}
-              href={`#${l.id}`}
+              href={href(l.id)}
               className="olink"
               style={{ "--d": `${120 + i * 55}ms` }}
               onClick={() => setOpen(false)}
@@ -106,6 +110,15 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
+          <a
+            href="/winners"
+            className="olink"
+            style={{ "--d": `${120 + CONTENT.nav.length * 55}ms` }}
+            onClick={() => setOpen(false)}
+          >
+            <em>{String(CONTENT.nav.length + 1).padStart(2, "0")}</em>
+            Winners
+          </a>
         </nav>
 
         <div className="ovl__foot">

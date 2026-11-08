@@ -2,8 +2,9 @@ import { GraduationCap, Phone, Mail, MapPin, School } from "lucide-react";
 import { CONTENT } from "../data/content.js";
 import Marquee from "./Marquee.jsx";
 
-export default function Footer() {
+export default function Footer({ winners = false }) {
   const c = CONTENT.contact;
+  const href = (id) => (winners ? `/#${id}` : `#${id}`);
   return (
     <footer>
       <div className="preband">
@@ -32,10 +33,11 @@ export default function Footer() {
             <p className="footer__h">Quick links</p>
             <div className="footer__links">
               {CONTENT.nav.map((l) => (
-                <a key={l.id} href={`#${l.id}`}>
+                <a key={l.id} href={href(l.id)}>
                   {l.label}
                 </a>
               ))}
+              <a href="/winners">Winners</a>
             </div>
           </div>
 
