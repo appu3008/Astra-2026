@@ -1321,8 +1321,8 @@
 .planefly__towed {
   position: absolute;
   top: 15px;
-  left: 6px;
-  width: 64px;
+  left: -37px;
+  width: 150px;
   opacity: 0;
   animation: towed-show 4.2s linear 1.9s 1 forwards;
 }
@@ -1340,7 +1340,7 @@
   transform: translateX(-50%);
   background: rgba(244, 246, 246, 0.6);
 }
-.planefly__towed-poster {
+.planefly__towed-board {
   position: absolute;
   top: 16px;
   left: 0;
@@ -1351,8 +1351,8 @@
 .planefly__fall {
   position: absolute;
   top: calc(20% + 30px);
-  left: 41.9vw;
-  width: 64px;
+  left: calc(41.9vw - 37px);
+  width: 150px;
   opacity: 0;
   animation: poster-land 11.6s linear 1.9s 1 forwards;
 }
@@ -1397,7 +1397,7 @@
   position: absolute;
   top: calc(20% + 12px);
   left: 40vw;
-  width: 34px;
+  width: 66px;
   opacity: 0;
   animation: poster-drop 16s linear infinite;
   animation-delay: 8.5s;
@@ -1415,16 +1415,16 @@
 }
 .planefly__fall svg,
 .planefly__poster svg,
-.planefly__towed-poster svg { display: block; width: 100%; height: auto; }
+.planefly__towed-board svg { display: block; width: 100%; height: auto; }
 
 @media (max-width: 860px) {
   .planefly { --fall-dist: 38vh; }
   .planefly__track,
   .planefly__track--intro { top: 24%; }
   .planefly__plane { width: 58px; }
-  .planefly__towed { top: 9px; left: 7px; width: 44px; }
-  .planefly__fall { top: calc(24% + 23px); width: 44px; }
-  .planefly__poster { top: calc(24% + 9px); width: 26px; }
+  .planefly__towed { top: 9px; left: -21px; width: 100px; }
+  .planefly__fall { top: calc(24% + 23px); left: calc(41.9vw - 25px); width: 100px; }
+  .planefly__poster { top: calc(24% + 9px); width: 48px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .planefly { display: none; }

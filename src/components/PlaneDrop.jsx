@@ -22,50 +22,41 @@ function PlaneSvg() {
   );
 }
 
-function PosterSvg() {
+function NameBoard() {
   return (
-    <svg viewBox="0 0 26 34" shape-rendering="crispEdges">
-      {/* paper */}
-      <rect x="0" y="0" width="26" height="34" fill="#ff9900" />
-      <rect x="2" y="2" width="22" height="30" fill="#f4f6f6" />
-      {/* navy title band with the event name */}
-      <rect x="4" y="3" width="18" height="6" fill="#0b1020" />
+    <svg viewBox="0 0 84 30" shape-rendering="crispEdges">
+      {/* board */}
+      <rect x="0" y="0" width="84" height="30" fill="#ff9900" />
+      <rect x="2" y="2" width="80" height="26" fill="#0b1020" />
+      {/* corner screws */}
+      <rect x="4" y="4" width="2" height="2" fill="#ffca73" />
+      <rect x="78" y="4" width="2" height="2" fill="#ffca73" />
+      <rect x="4" y="24" width="2" height="2" fill="#ffca73" />
+      <rect x="78" y="24" width="2" height="2" fill="#ffca73" />
+      {/* the name, force-fitted to the board */}
       <text
-        x="13"
-        y="7.6"
+        x="42"
+        y="19.4"
         textAnchor="middle"
+        textLength="72"
+        lengthAdjust="spacingAndGlyphs"
         fontFamily="Silkscreen, monospace"
-        fontSize="3"
+        fontSize="8.4"
         fill="#f4f6f6"
       >
         ASTRA-2026
       </text>
-      {/* date + venue chips */}
-      <rect x="4" y="11" width="8" height="3.4" fill="#22d3ee" />
-      <text x="8" y="13.6" textAnchor="middle" fontFamily="Silkscreen, monospace" fontSize="1.9" fill="#0b1020">
-        15 NOV
-      </text>
-      <rect x="14" y="11" width="8" height="3.4" fill="#ffca73" />
-      <text x="18" y="13.6" textAnchor="middle" fontFamily="Silkscreen, monospace" fontSize="1.9" fill="#0b1020">
-        RDS
-      </text>
-      {/* fake text lines */}
-      <rect x="4" y="17" width="18" height="1" fill="#0b1020" opacity="0.25" />
-      <rect x="4" y="19" width="14" height="1" fill="#0b1020" opacity="0.25" />
-      <rect x="4" y="21" width="16" height="1" fill="#0b1020" opacity="0.25" />
-      {/* bottom accent */}
-      <rect x="4" y="25" width="9" height="4" fill="#a78bfa" />
-      <rect x="15" y="26" width="7" height="1" fill="#0b1020" opacity="0.3" />
-      <rect x="15" y="28" width="5" height="1" fill="#0b1020" opacity="0.3" />
+      {/* accent bar */}
+      <rect x="6" y="23" width="72" height="2" fill="#ff9900" />
     </svg>
   );
 }
 
-function TowedPoster() {
+function TowedBoard() {
   return (
     <div className="planefly__towed">
-      <div className="planefly__towed-poster">
-        <PosterSvg />
+      <div className="planefly__towed-board">
+        <NameBoard />
       </div>
     </div>
   );
@@ -74,31 +65,31 @@ function TowedPoster() {
 export default function PlaneDrop() {
   return (
     <div className="planefly" aria-hidden="true">
-      {/* intro pass (one-shot) — plane carries the poster and releases it mid-screen */}
+      {/* intro pass (one-shot) — plane tows the ASTRA-2026 sign and releases it mid-screen */}
       <div className="planefly__track planefly__track--intro">
         <PlaneSvg />
-        <TowedPoster />
+        <TowedBoard />
       </div>
 
-      {/* ambient loop — keeps dropping small flyers */}
+      {/* ambient loop — keeps dropping small name boards */}
       <div className="planefly__track">
         <PlaneSvg />
       </div>
 
-      {/* intro poster — falls, lands and holds, then fades */}
+      {/* intro board — falls, opens, lands and holds, then fades */}
       <div className="planefly__fall">
         <div className="planefly__sway">
-          <div className="planefly__un planefly__un--i">
-            <PosterSvg />
+          <div className="planefly__un">
+            <NameBoard />
           </div>
         </div>
       </div>
 
-      {/* ambient flyer */}
+      {/* ambient board */}
       <div className="planefly__poster">
         <div className="planefly__sway">
           <div className="planefly__un">
-            <PosterSvg />
+            <NameBoard />
           </div>
         </div>
       </div>
