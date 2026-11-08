@@ -2,6 +2,7 @@ import { CalendarDays, MapPin } from "lucide-react";
 import { CONTENT } from "../data/content.js";
 import useCountdown from "../hooks/useCountdown.js";
 import PixelField from "./PixelField.jsx";
+import PlaneDrop from "./PlaneDrop.jsx";
 import RotatingBadge from "./RotatingBadge.jsx";
 import Payband from "./Payband.jsx";
 
@@ -24,6 +25,7 @@ export default function Hero() {
   return (
     <section className="hero" id="home" aria-label="ASTRA-2026 introduction">
       <PixelField className="hero__canvas" />
+      <PlaneDrop />
 
       <div className="container hero__grid">
         <div className="hero__main">

@@ -1268,3 +1268,73 @@
 }
 .devband__tags i { display: inline-flex; }
 .devband__tags i + i::before { content: "|"; margin: 0 9px; color: rgba(34, 211, 238, 0.35); }
+
+/* ---------- plane + drop (hero arcade overlay) ---------- */
+.planefly {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.planefly__track {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  height: 0;
+  transform: translateX(-18vw);
+  animation: plane-fly 18s linear infinite;
+}
+@keyframes plane-fly {
+  from { transform: translateX(-18vw); }
+  to { transform: translateX(118vw); }
+}
+.planefly__plane {
+  display: block;
+  width: 76px;
+  height: auto;
+  filter: drop-shadow(0 4px 0 rgba(124, 58, 237, 0.35));
+  animation: plane-bob 3.2s ease-in-out infinite alternate;
+}
+@keyframes plane-bob {
+  from { transform: translateY(0); }
+  to { transform: translateY(-8px); }
+}
+.planefly__prop { animation: plane-prop 0.14s steps(2, jump-none) infinite alternate; }
+@keyframes plane-prop {
+  from { opacity: 1; }
+  to { opacity: 0.15; }
+}
+/* parcel — plane passes left:40vw at 42.7% of the 18s cycle; timed to it */
+.planefly__parcel {
+  position: absolute;
+  top: calc(20% + 12px);
+  left: 40vw;
+  width: 26px;
+  opacity: 0;
+  animation: parcel-drop 18s linear infinite;
+}
+@keyframes parcel-drop {
+  0%, 42.7% { opacity: 0; transform: translateY(0); }
+  43% {
+    opacity: 1;
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.45, 0, 0.85, 0.9);
+  }
+  60% { opacity: 1; transform: translateY(46vh); animation-timing-function: linear; }
+  64%, 100% { opacity: 0; transform: translateY(46vh); }
+}
+.planefly__sway { animation: parcel-sway 1.7s ease-in-out infinite alternate; }
+@keyframes parcel-sway {
+  from { transform: rotate(-5deg) translateX(-2px); }
+  to { transform: rotate(5deg) translateX(2px); }
+}
+.planefly__parcel svg { display: block; width: 100%; height: auto; }
+@media (max-width: 860px) {
+  .planefly__track { top: 24%; }
+  .planefly__plane { width: 58px; }
+  .planefly__parcel { top: calc(24% + 9px); width: 21px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .planefly { display: none; }
+}
