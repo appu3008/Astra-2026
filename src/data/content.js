@@ -168,9 +168,9 @@ export const CONTENT = {
   ],
 
   contact: {
-    phone: "[ADD: phone number]",
-    email: "[ADD: email address]",
-    officeHours: "[ADD: office hours]",
+    phone: "9886565627",
+    email: "shivappasattigeri9@gmail.com",
+    officeHours: "Morning 8 AM - Evening 6 PM",
     office: ["Rural Development Society (RDS)", "RDS Campus, Laxmi Nagar", "Near BEO Office, Mudalgi - 591312"],
   },
 
