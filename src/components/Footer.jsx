@@ -1,4 +1,4 @@
-import { GraduationCap, Phone, Mail, MapPin, School } from "lucide-react";
+import { GraduationCap, Phone, Mail, MapPin, School, Code2 } from "lucide-react";
 import { CONTENT } from "../data/content.js";
 import Marquee from "./Marquee.jsx";
 
@@ -72,6 +72,17 @@ export default function Footer({ winners = false }) {
                 {c.office[1]}, {c.office[2]}
               </span>
             </div>
+          </div>
+        </div>
+
+        <div className="devband">
+          <div className="container">
+            <p className="devband__eyebrow">
+              <Code2 aria-hidden="true" />
+              Developed &amp; designed by
+            </p>
+            <p className="devband__name">Mallikarjun Sattigeri</p>
+            <p className="devband__role">Cybersecurity Researcher in Progress</p>
           </div>
         </div>
 
