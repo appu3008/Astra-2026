@@ -23,23 +23,30 @@ export default function PlaneDrop() {
         </svg>
       </div>
 
-      <div className="planefly__parcel">
+      {/* the poster the plane drops */}
+      <div className="planefly__poster">
         <div className="planefly__sway">
-          <svg viewBox="0 0 22 30" shape-rendering="crispEdges">
-            {/* canopy */}
-            <rect x="4" y="0" width="14" height="2" fill="#a78bfa" />
-            <rect x="2" y="2" width="18" height="2" fill="#a78bfa" />
-            <rect x="3" y="4" width="16" height="2" fill="#7c3aed" />
-            {/* strings */}
-            <rect x="5" y="6" width="1" height="10" fill="#f4f6f6" />
-            <rect x="10" y="6" width="1" height="10" fill="#f4f6f6" />
-            <rect x="16" y="6" width="1" height="10" fill="#f4f6f6" />
-            {/* gift box */}
-            <rect x="5" y="16" width="12" height="10" fill="#ff9900" />
-            <rect x="5" y="16" width="12" height="2" fill="#ffca73" />
-            <rect x="10" y="18" width="2" height="8" fill="#22d3ee" />
-            <rect x="5" y="21" width="12" height="2" fill="#22d3ee" />
-          </svg>
+          <div className="planefly__un">
+            <svg viewBox="0 0 26 34" shape-rendering="crispEdges">
+              {/* paper */}
+              <rect x="0" y="0" width="26" height="34" fill="#ff9900" />
+              <rect x="2" y="2" width="22" height="30" fill="#f4f6f6" />
+              {/* top band + title */}
+              <rect x="4" y="4" width="18" height="4" fill="#0b1020" />
+              <rect x="4" y="10" width="10" height="2" fill="#7c3aed" />
+              <rect x="4" y="13" width="15" height="2" fill="#ff9900" />
+              {/* fake text lines */}
+              <rect x="4" y="18" width="18" height="1" fill="#0b1020" opacity="0.28" />
+              <rect x="4" y="20" width="14" height="1" fill="#0b1020" opacity="0.28" />
+              <rect x="4" y="22" width="16" height="1" fill="#0b1020" opacity="0.28" />
+              {/* date block */}
+              <rect x="4" y="26" width="9" height="4" fill="#22d3ee" />
+              <rect x="15" y="27" width="7" height="1" fill="#0b1020" opacity="0.3" />
+              <rect x="15" y="29" width="5" height="1" fill="#0b1020" opacity="0.3" />
+              {/* fold line */}
+              <rect x="2" y="16" width="22" height="1" fill="#0b1020" opacity="0.08" />
+            </svg>
+          </div>
         </div>
       </div>
     </div>

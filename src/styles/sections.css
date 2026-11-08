@@ -1283,7 +1283,9 @@
   right: 0;
   height: 0;
   transform: translateX(-18vw);
-  animation: plane-fly 18s linear infinite;
+  animation: plane-fly 16s linear infinite;
+  /* first pass happens right as the page opens (splash lifts ~1.7s) */
+  animation-delay: 1.8s;
 }
 @keyframes plane-fly {
   from { transform: translateX(-18vw); }
@@ -1305,35 +1307,49 @@
   from { opacity: 1; }
   to { opacity: 0.15; }
 }
-/* parcel — plane passes left:40vw at 42.7% of the 18s cycle; timed to it */
-.planefly__parcel {
+
+/* poster — plane passes left:40vw at 42.7% of the cycle; release is timed to it */
+.planefly__poster {
   position: absolute;
   top: calc(20% + 12px);
   left: 40vw;
-  width: 26px;
+  width: 38px;
   opacity: 0;
-  animation: parcel-drop 18s linear infinite;
+  animation: poster-drop 16s linear infinite;
+  animation-delay: 1.8s;
 }
-@keyframes parcel-drop {
+@keyframes poster-drop {
   0%, 42.7% { opacity: 0; transform: translateY(0); }
   43% {
     opacity: 1;
     transform: translateY(0);
     animation-timing-function: cubic-bezier(0.45, 0, 0.85, 0.9);
   }
-  60% { opacity: 1; transform: translateY(46vh); animation-timing-function: linear; }
-  64%, 100% { opacity: 0; transform: translateY(46vh); }
+  50% { opacity: 1; transform: translateY(46vh); animation-timing-function: linear; }
+  55%, 56% { opacity: 1; transform: translateY(46vh); }
+  60%, 100% { opacity: 0; transform: translateY(46vh); }
+}
+/* fold snaps open right at release */
+.planefly__un {
+  transform-origin: top center;
+  animation: poster-unfold 16s linear infinite;
+  animation-delay: 1.8s;
+}
+@keyframes poster-unfold {
+  0%, 42.9% { transform: scaleY(0.08); }
+  45.6% { transform: scaleY(1); }
+  100% { transform: scaleY(1); }
 }
 .planefly__sway { animation: parcel-sway 1.7s ease-in-out infinite alternate; }
 @keyframes parcel-sway {
   from { transform: rotate(-5deg) translateX(-2px); }
   to { transform: rotate(5deg) translateX(2px); }
 }
-.planefly__parcel svg { display: block; width: 100%; height: auto; }
+.planefly__poster svg { display: block; width: 100%; height: auto; }
 @media (max-width: 860px) {
   .planefly__track { top: 24%; }
   .planefly__plane { width: 58px; }
-  .planefly__parcel { top: calc(24% + 9px); width: 21px; }
+  .planefly__poster { top: calc(24% + 9px); width: 28px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .planefly { display: none; }
