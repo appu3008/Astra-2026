@@ -5,7 +5,7 @@ const TAGS = ["Ethical Hacking", "Bug Hunting", "Web Security", "Network Securit
 export default function Sigstrip({ variant }) {
   return (
     <aside
-      className={`sigstrip${variant === "footer" ? " sigstrip--footer" : ""}`}
+      className={`sigstrip${variant === "hero" ? " sigstrip--hero" : ""}`}
       data-reveal
       aria-label="Site creator signature"
     >

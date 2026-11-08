@@ -4,6 +4,7 @@ import useCountdown from "../hooks/useCountdown.js";
 import PixelField from "./PixelField.jsx";
 import RotatingBadge from "./RotatingBadge.jsx";
 import Payband from "./Payband.jsx";
+import Sigstrip from "./Sigstrip.jsx";
 
 const fmt = (n) => (typeof n === "number" ? String(n).padStart(2, "0") : "--");
 
@@ -101,6 +102,8 @@ export default function Hero() {
               <p className="count__done">Children's Day 2026 — see you at RDS Campus, Mudalgi!</p>
             )}
           </div>
+
+          <Sigstrip variant="hero" />
         </div>
 
         <aside className="hero__side" aria-hidden="true">
