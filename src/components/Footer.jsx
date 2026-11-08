@@ -1,6 +1,7 @@
 import { GraduationCap, Phone, Mail, MapPin, School } from "lucide-react";
 import { CONTENT } from "../data/content.js";
 import Marquee from "./Marquee.jsx";
+import Sigstrip from "./Sigstrip.jsx";
 
 export default function Footer() {
   const c = CONTENT.contact;
@@ -72,6 +73,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
+
+        <Sigstrip variant="footer" />
 
         <div className="container footer__bar">
           <span>© 2026 {CONTENT.event.organiser}</span>

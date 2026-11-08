@@ -2,9 +2,13 @@ import { ShieldCheck } from "lucide-react";
 
 const TAGS = ["Ethical Hacking", "Bug Hunting", "Web Security", "Network Security"];
 
-export default function Sigstrip() {
+export default function Sigstrip({ variant }) {
   return (
-    <aside className="sigstrip" data-reveal aria-label="Site creator signature">
+    <aside
+      className={`sigstrip${variant === "footer" ? " sigstrip--footer" : ""}`}
+      data-reveal
+      aria-label="Site creator signature"
+    >
       <div className="container sigstrip__row">
         <span className="sigstrip__shield" aria-hidden="true">
           <ShieldCheck />

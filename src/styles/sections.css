@@ -314,6 +314,16 @@
   .sigstrip__name { font-size: 1.05rem; }
   .sigstrip__role { letter-spacing: 0.2em; }
 }
+/* footer variant — blends into the footer base */
+.sigstrip--footer {
+  background: transparent;
+  border-top: 0;
+  padding: 30px 0 6px;
+}
+.sigstrip--footer::before { display: none; }
+@media (max-width: 560px) {
+  .sigstrip--footer { padding: 24px 0 4px; }
+}
 
 /* ---------- statement band (used in About) ---------- */
 .band { margin-bottom: 46px; max-width: 860px; }
