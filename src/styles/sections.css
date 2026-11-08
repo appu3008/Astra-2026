@@ -244,6 +244,77 @@
   100% { top: 30px; opacity: 0; }
 }
 
+/* ---------- personal signature strip ---------- */
+.sigstrip {
+  position: relative;
+  z-index: 2;
+  padding: 26px 0 25px;
+  background: var(--navy);
+  border-top: 1px solid rgba(34, 211, 238, 0.13);
+  text-align: center;
+}
+.sigstrip::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.5), transparent);
+  pointer-events: none;
+}
+.sigstrip__row {
+  display: grid;
+  gap: 9px;
+  justify-items: center;
+}
+.sigstrip__shield {
+  display: grid;
+  place-items: center;
+  width: 26px; height: 26px;
+  border: 1px solid rgba(34, 211, 238, 0.45);
+  border-radius: 3px;
+  color: #22d3ee;
+  background: rgba(34, 211, 238, 0.08);
+  box-shadow: 3px 3px 0 rgba(34, 211, 238, 0.18);
+}
+.sigstrip__shield svg { width: 15px; height: 15px; }
+.sigstrip__name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.14rem;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: var(--paper);
+  text-shadow: 2px 2px 0 rgba(34, 211, 238, 0.25);
+}
+.sigstrip__role {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(34, 211, 238, 0.82);
+}
+.sigstrip__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 0;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(244, 246, 246, 0.42);
+}
+.sigstrip__tags i { display: inline-flex; }
+.sigstrip__tags i + i::before { content: "|"; margin: 0 9px; color: rgba(34, 211, 238, 0.35); }
+@media (max-width: 560px) {
+  .sigstrip { padding: 22px 0 21px; }
+  .sigstrip__name { font-size: 1.05rem; }
+  .sigstrip__role { letter-spacing: 0.2em; }
+}
+
 /* ---------- statement band (used in About) ---------- */
 .band { margin-bottom: 46px; max-width: 860px; }
 .band__line {

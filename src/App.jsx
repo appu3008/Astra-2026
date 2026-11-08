@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 import Splash from "./components/Splash.jsx";
 import Hero from "./components/Hero.jsx";
+import Sigstrip from "./components/Sigstrip.jsx";
 import About from "./components/About.jsx";
 import Eligibility from "./components/Eligibility.jsx";
 import Prizes from "./components/Prizes.jsx";
@@ -20,6 +21,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <Sigstrip />
         <SectionDivider from="navy" to="paper" />
         <About />
         <SectionDivider from="paper" to="navy" />
