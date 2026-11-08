@@ -137,8 +137,8 @@ export const CONTENT = {
 
   registerSteps: [
     { n: "01", t: "Fill the Google Form", d: "Name, grade, school and board — one form per student." },
-    { n: "02", t: "Pay the exam fee", d: "₹100 (Grade IV–V) or ₹200 (Grade IX–X) as per [ADD: payment instructions]." },
-    { n: "03", t: "Carry school ID", d: "Report by [ADD: reporting time] with your ID / bonafide for check-in." },
+    { n: "02", t: "Pay the exam fee", d: "₹100 (Grade IV–V) or ₹200 (Grade IX–X), payable at the exam entrance on 15 November 2026." },
+    { n: "03", t: "Carry school ID", d: "Report by 7:30 AM with your ID / bonafide for check-in." },
   ],
 
   // DRAFT instructions — replace/adjust with the official list before launch.
@@ -153,7 +153,7 @@ export const CONTENT = {
     },
     {
       title: "Report early",
-      text: "Reach the exam campus by [ADD: reporting time]. Check-in closes 15 minutes before the paper begins.",
+      text: "Reach the exam campus by 7:30 AM. Check-in closes 15 minutes before the paper begins.",
     },
     {
       title: "What to carry",
@@ -169,7 +169,7 @@ export const CONTENT = {
     },
     {
       title: "Examination fee",
-      text: "₹100 for Grade IV–V and ₹200 for Grade IX–X, payable as per [ADD: payment instructions].",
+      text: "₹100 for Grade IV–V and ₹200 for Grade IX–X, payable at the exam entrance — please carry exact change.",
     },
     {
       title: "Results & prizes",

@@ -83,7 +83,7 @@ export default function Contact() {
               <Navigation />
               Get Directions
             </a>
-            {!form && <p className="cta__hint">Google Form link goes live shortly — [ADD]</p>}
+            {!form && <p className="cta__hint">Google Form link goes live shortly.</p>}
           </div>
 
           <Payband tone="amber" />
