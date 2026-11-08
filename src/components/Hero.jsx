@@ -3,6 +3,7 @@ import { CONTENT } from "../data/content.js";
 import useCountdown from "../hooks/useCountdown.js";
 import PixelField from "./PixelField.jsx";
 import RotatingBadge from "./RotatingBadge.jsx";
+import Payband from "./Payband.jsx";
 
 const fmt = (n) => (typeof n === "number" ? String(n).padStart(2, "0") : "--");
 
@@ -70,6 +71,8 @@ export default function Hero() {
               Explore Event
             </a>
           </div>
+
+          <Payband tone="dark" />
 
           <div className="count" data-reveal style={{ transitionDelay: "390ms" }} role="timer" aria-label="Countdown to the event">
             {t ? (

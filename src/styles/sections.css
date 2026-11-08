@@ -910,3 +910,149 @@
 @media (min-width: 900px) { .cta__actions { justify-self: end; } }
 .cta__hint { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(11, 16, 32, 0.55); }
 
+
+/* ---------- bilingual payment announcement ---------- */
+.payband {
+  position: relative;
+  overflow: hidden;
+  margin-top: 24px;
+  max-width: 100%;
+  display: grid;
+  gap: 7px;
+  justify-items: center;
+  padding: 15px 22px 14px;
+  border: 1px solid rgba(255, 153, 0, 0.55);
+  border-radius: 3px;
+  background: rgba(11, 16, 32, 0.55);
+  backdrop-filter: blur(8px);
+  box-shadow: 6px 6px 0 rgba(124, 58, 237, 0.4);
+  text-align: center;
+  animation: pb-glow 3.6s ease-in-out infinite;
+}
+@keyframes pb-glow {
+  0%, 100% { box-shadow: 6px 6px 0 rgba(124, 58, 237, 0.4), 0 0 0 0 rgba(255, 153, 0, 0); }
+  50% { box-shadow: 6px 6px 0 rgba(124, 58, 237, 0.4), 0 0 18px 0 rgba(255, 153, 0, 0.3); }
+}
+.payband::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 34%;
+  background: linear-gradient(100deg, transparent, rgba(255, 202, 115, 0.13), transparent);
+  animation: pb-sheen 5.5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes pb-sheen { 0% { left: -40%; } 60%, 100% { left: 110%; } }
+.payband__kicker {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 202, 115, 0.85);
+}
+.payband__kicker i {
+  width: 5px; height: 5px;
+  background: #22d3ee;
+  transform: rotate(45deg);
+  flex: none;
+}
+.payband__line {
+  font-family: var(--font-arcade);
+  font-weight: 700;
+  font-size: clamp(1rem, 3.2vw, 1.35rem);
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  color: #ff9900;
+  text-shadow: 2px 2px 0 rgba(124, 58, 237, 0.55);
+}
+.payband__line--kn {
+  font-family: var(--font-sans);
+  font-size: clamp(0.98rem, 3vw, 1.28rem);
+  letter-spacing: 0.01em;
+  color: #ffca73;
+}
+.payband__fees {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 12px;
+  margin-top: 3px;
+}
+.payband__fee {
+  display: grid;
+  gap: 2px;
+  justify-items: center;
+  padding: 7px 14px 8px;
+  border: 1px dashed rgba(255, 153, 0, 0.45);
+  border-radius: 3px;
+  background: rgba(255, 153, 0, 0.07);
+}
+.payband__fee b {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(244, 246, 246, 0.8);
+}
+.payband__fee b span { color: #ffca73; font-weight: 700; }
+.payband__fee > span {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255, 202, 115, 0.92);
+}
+.payband__fee > span span { color: #ff9900; font-weight: 700; }
+.payband__when {
+  display: grid;
+  gap: 2px;
+  justify-items: center;
+  margin-top: 3px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(255, 153, 0, 0.3);
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(244, 246, 246, 0.5);
+}
+.payband__when > span[lang="kn"] {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: rgba(244, 246, 246, 0.62);
+  font-weight: 500;
+}
+
+/* amber-card variant (inside the registration CTA) */
+.payband--amber {
+  grid-column: 1 / -1;
+  margin: 10px 0 0;
+  border-color: rgba(11, 16, 32, 0.45);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: none;
+  box-shadow: 4px 4px 0 rgba(11, 16, 32, 0.5);
+}
+.payband--amber .payband__kicker { color: rgba(11, 16, 32, 0.68); }
+.payband--amber .payband__kicker i { background: rgba(11, 16, 32, 0.5); }
+.payband--amber .payband__line { color: #0b1020; text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.55); }
+.payband--amber .payband__line--kn { color: #b45309; }
+.payband--amber .payband__fee { border-color: rgba(11, 16, 32, 0.35); background: rgba(11, 16, 32, 0.05); }
+.payband--amber .payband__fee b { color: rgba(11, 16, 32, 0.78); }
+.payband--amber .payband__fee b span { color: #0b1020; }
+.payband--amber .payband__fee > span { color: rgba(11, 16, 32, 0.85); }
+.payband--amber .payband__fee > span span { color: #92400e; }
+.payband--amber .payband__when { border-top-color: rgba(11, 16, 32, 0.25); color: rgba(11, 16, 32, 0.6); }
+.payband--amber .payband__when > span[lang="kn"] { color: rgba(11, 16, 32, 0.68); }
+.payband--amber::after { background: linear-gradient(100deg, transparent, rgba(11, 16, 32, 0.08), transparent); }
+@media (max-width: 560px) {
+  .payband { padding: 13px 16px 12px; gap: 6px; }
+  .payband__fee { padding: 6px 11px 7px; }
+}

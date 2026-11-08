@@ -1,6 +1,7 @@
 import { Phone, Mail, Clock3, MapPin, Navigation } from "lucide-react";
 import { CONTENT } from "../data/content.js";
 import SectionHead from "./SectionHead.jsx";
+import Payband from "./Payband.jsx";
 
 export default function Contact() {
   const c = CONTENT.contact;
@@ -84,6 +85,8 @@ export default function Contact() {
             </a>
             {!form && <p className="cta__hint">Google Form link goes live shortly — [ADD]</p>}
           </div>
+
+          <Payband tone="amber" />
         </div>
       </div>
     </section>
