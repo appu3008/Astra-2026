@@ -1268,3 +1268,98 @@
 }
 .devband__tags i { display: inline-flex; }
 .devband__tags i + i::before { content: "|"; margin: 0 9px; color: rgba(34, 211, 238, 0.35); }
+
+/* ---------- plane towing the ASTRA-2026 name (hero arcade overlay) ----------
+   The plane's back is tied to the wordmark; it flies across the hero pulling
+   the letter chain, which ripples like tow cloth behind it. */
+.planefly {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.planefly__track {
+  position: absolute;
+  top: 16%;
+  left: 0;
+  right: 0;
+  height: 0;
+  transform: translateX(-18vw);
+  animation: plane-fly 13s linear infinite;
+  /* first tow happens right as the page opens (splash lifts ~1.7s) */
+  animation-delay: 1.9s;
+}
+@keyframes plane-fly {
+  from { transform: translateX(-18vw); }
+  to { transform: translateX(118vw); }
+}
+.planefly__unit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: plane-bob 3.2s ease-in-out infinite alternate;
+}
+@keyframes plane-bob {
+  from { transform: translateY(0); }
+  to { transform: translateY(-8px); }
+}
+.planefly__plane {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 76px;
+  height: auto;
+  filter: drop-shadow(0 4px 0 rgba(124, 58, 237, 0.35));
+}
+.planefly__prop { animation: plane-prop 0.14s steps(2, jump-none) infinite alternate; }
+@keyframes plane-prop {
+  from { opacity: 1; }
+  to { opacity: 0.15; }
+}
+/* tow line: plane tail -> letter chain */
+.planefly__line {
+  position: absolute;
+  top: 13px;
+  left: 6px;
+  width: 42px;
+  height: 2px;
+  transform: rotate(14deg);
+  transform-origin: left center;
+  background: rgba(244, 246, 246, 0.55);
+}
+/* letter chain trails behind, "ASTRA" white + "-2026" like the hero title */
+.planefly__chain {
+  position: absolute;
+  top: 18px;
+  left: -166px;
+  display: flex;
+  gap: 2px;
+  font-family: var(--font-arcade);
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 1;
+}
+.planefly__char {
+  color: #f4f6f6;
+  text-shadow: 2px 2px 0 rgba(124, 58, 237, 0.45);
+  animation: char-wave 1.3s ease-in-out infinite alternate;
+}
+.planefly__char--gold { color: #c4b5fd; }
+@keyframes char-wave {
+  from {
+    transform: translateY(-3px) rotate(-2.5deg);
+  }
+  to {
+    transform: translateY(3px) rotate(2.5deg);
+  }
+}
+@media (max-width: 860px) {
+  .planefly__track { top: 21%; }
+  .planefly__plane { width: 58px; }
+  .planefly__line { top: 11px; left: 5px; width: 41px; transform: rotate(15.5deg); }
+  .planefly__chain { top: 14px; left: -118px; font-size: 20px; gap: 1px; }
+  .planefly__char { text-shadow: 2px 2px 0 rgba(124, 58, 237, 0.4); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .planefly { display: none; }
+}
