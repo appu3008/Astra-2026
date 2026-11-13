@@ -1363,3 +1363,56 @@
 @media (prefers-reduced-motion: reduce) {
   .planefly { display: none; }
 }
+
+/* ---------- registration closing soon ---------- */
+.hero__closing {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 18px;
+  padding: 7px 14px 8px;
+  border: 1px solid rgba(255, 153, 0, 0.55);
+  border-radius: 3px;
+  background: rgba(255, 153, 0, 0.08);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #ffca73;
+  box-shadow: 3px 3px 0 rgba(124, 58, 237, 0.35);
+}
+.hero__closing-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff9900;
+  animation: closing-pulse 1.6s ease-out infinite;
+}
+@keyframes closing-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 153, 0, 0.55); }
+  70% { box-shadow: 0 0 0 8px rgba(255, 153, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 153, 0, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__closing-dot,
+  .cta__closing i { animation: none; }
+}
+.cta__closing {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(11, 16, 32, 0.78);
+}
+.cta__closing i {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 50%;
+  background: #ff9900;
+  animation: closing-pulse 1.6s ease-out infinite;
+}

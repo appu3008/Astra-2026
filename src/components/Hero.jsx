@@ -67,6 +67,11 @@ export default function Hero() {
             </span>
           </div>
 
+          <p className="hero__closing" data-reveal style={{ transitionDelay: "300ms" }}>
+            <i className="hero__closing-dot" aria-hidden="true" />
+            Registration closing soon
+          </p>
+
           <div className="hero__ctas" data-reveal style={{ transitionDelay: "330ms" }}>
             {regCta}
             <a className="btn btn--line" href="#about">

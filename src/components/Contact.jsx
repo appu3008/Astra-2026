@@ -84,6 +84,10 @@ export default function Contact() {
               Get Directions
             </a>
             {!form && <p className="cta__hint">Google Form link goes live shortly.</p>}
+            <p className="cta__closing">
+              <i aria-hidden="true" />
+              Registrations close soon — limited seats. Don't wait for the last day.
+            </p>
           </div>
 
           <Payband tone="amber" />
