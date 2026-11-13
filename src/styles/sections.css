@@ -1416,3 +1416,87 @@
   background: #ff9900;
   animation: closing-pulse 1.6s ease-out infinite;
 }
+
+/* ---------- open-the-site notification ---------- */
+.regnotice {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: min(560px, calc(100vw - 28px));
+  padding: 14px 42px 14px 16px;
+  border: 1px solid rgba(255, 153, 0, 0.55);
+  border-radius: 3px;
+  background: rgba(11, 16, 32, 0.92);
+  box-shadow: 6px 6px 0 rgba(124, 58, 237, 0.45);
+  backdrop-filter: blur(10px);
+  transform: translate(-50%, calc(100% + 30px));
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 0.55s ease,
+    visibility 0.55s;
+}
+.regnotice--open {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  visibility: visible;
+}
+.regnotice__ico {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  flex: none;
+  color: #ff9900;
+  border: 1px solid rgba(255, 153, 0, 0.45);
+  border-radius: 3px;
+  background: rgba(255, 153, 0, 0.08);
+}
+.regnotice__ico svg { width: 17px; height: 17px; }
+.regnotice__tag {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #ffca73;
+}
+.regnotice__text {
+  margin-top: 2px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: rgba(244, 246, 246, 0.78);
+}
+.regnotice__x {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 0;
+  border-radius: 3px;
+  background: none;
+  color: rgba(244, 246, 246, 0.55);
+  cursor: pointer;
+}
+.regnotice__x:hover { color: var(--paper); background: rgba(244, 246, 246, 0.08); }
+@media (max-width: 640px) {
+  .regnotice {
+    flex-wrap: wrap;
+    row-gap: 10px;
+    bottom: 12px;
+    padding: 14px 40px 14px 14px;
+  }
+  .regnotice__body { flex: 1 1 auto; }
+  .regnotice .btn { flex: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .regnotice { transition: opacity 0.3s ease, visibility 0.3s; transform: translate(-50%, 0); }
+}
