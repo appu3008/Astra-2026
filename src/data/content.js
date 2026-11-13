@@ -193,7 +193,7 @@ export const CONTENT = {
   },
 
   links: {
-    registration: "https://docs.google.com/forms/d/e/1FAIpQLScUvRw3laojTvd9XW-Iu5csRPC1ZOfPZ-zWMu-pBK8KyNGQuA/viewform?usp=publish-editor",
+    registration: "https://docs.google.com/forms/d/e/1FAIpQLScD4et4i6XzejzqyjvbnI_Xvh7CroGYOkZHYi4mm2n3Lqi4qA/viewform?usp=header",
     map: "https://www.google.com/maps/search/?api=1&query=RDS+Campus+Laxmi+Nagar+Near+BEO+Office+Mudalgi+591312",
   },
 };
