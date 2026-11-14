@@ -88,6 +88,14 @@ export default function Footer({ winners = false }) {
                 <i key={t}>{t}</i>
               ))}
             </p>
+
+            <p className="devband__name-kn" lang="kn">ಮಲ್ಲಿಕಾರ್ಜುನ ಸತ್ತಿಗೇರಿ</p>
+            <p className="devband__role-kn" lang="kn">ಸೈಬರ್ ಭದ್ರತಾ ಸಂಶೋಧಕ (ಪ್ರಗತಿಯಲ್ಲಿ)</p>
+            <p className="devband__tags-kn" lang="kn">
+              {["ನೈತಿಕ ಹ್ಯಾಕಿಂಗ್", "ಬಗ್ ಹಂಟಿಂಗ್", "ವೆಬ್ ಭದ್ರತೆ", "ನೆಟ್‌ವರ್ಕ್ ಭದ್ರತೆ"].map((t) => (
+                <i key={t}>{t}</i>
+              ))}
+            </p>
           </div>
         </div>
 

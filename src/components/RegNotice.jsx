@@ -6,10 +6,11 @@ const FLAG = "astra-notice-x";
 
 export default function RegNotice() {
   const [open, setOpen] = useState(false);
+  const form = CONTENT.links.registration;
 
   useEffect(() => {
-    // dismissed already in this tab session — stay quiet
-    if (sessionStorage.getItem(FLAG) === "1") return;
+    // registration closed — nothing to announce
+    if (!CONTENT.links.registration) return;
     const t1 = setTimeout(() => setOpen(true), 2400);
     const t2 = setTimeout(() => setOpen(false), 14000);
     return () => {
@@ -22,6 +23,8 @@ export default function RegNotice() {
     sessionStorage.setItem(FLAG, "1");
     setOpen(false);
   };
+
+  if (!form) return null;
 
   return (
     <aside
@@ -39,7 +42,7 @@ export default function RegNotice() {
         <p className="regnotice__text">Registrations for ASTRA-2026 close soon — limited seats.</p>
       </div>
 
-      <a className="btn btn--gold btn--sm" href={CONTENT.links.registration} target="_blank" rel="noopener noreferrer">
+      <a className="btn btn--gold btn--sm" href={form} target="_blank" rel="noopener noreferrer">
         Register Now
       </a>
 

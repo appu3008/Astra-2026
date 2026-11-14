@@ -110,9 +110,15 @@ export default function Winners() {
               ))}
 
               <div className="win__actions" data-reveal style={{ transitionDelay: "320ms" }}>
-                <a className="btn btn--gold" href={CONTENT.links.registration} target="_blank" rel="noopener noreferrer">
-                  Register Now
-                </a>
+                {CONTENT.links.registration ? (
+                  <a className="btn btn--gold" href={CONTENT.links.registration} target="_blank" rel="noopener noreferrer">
+                    Register Now
+                  </a>
+                ) : (
+                  <span className="btn btn--gold" style={{ opacity: 0.55, pointerEvents: "none" }} aria-disabled="true">
+                    Registration Closed
+                  </span>
+                )}
                 <a className="btn btn--line-dark" href="/">
                   <ArrowLeft />
                   Back to Home

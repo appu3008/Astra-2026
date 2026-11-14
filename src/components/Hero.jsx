@@ -17,9 +17,9 @@ export default function Hero() {
       Register Now
     </a>
   ) : (
-    <a className="btn btn--gold" href="#contact">
-      Register Now
-    </a>
+    <span className="btn btn--gold" style={{ opacity: 0.55, pointerEvents: "none" }} aria-disabled="true">
+      Registration Closed
+    </span>
   );
 
   return (
@@ -67,10 +67,12 @@ export default function Hero() {
             </span>
           </div>
 
-          <p className="hero__closing" data-reveal style={{ transitionDelay: "300ms" }}>
-            <i className="hero__closing-dot" aria-hidden="true" />
-            Registration closing soon
-          </p>
+          {form && (
+            <p className="hero__closing" data-reveal style={{ transitionDelay: "300ms" }}>
+              <i className="hero__closing-dot" aria-hidden="true" />
+              Registration closing soon
+            </p>
+          )}
 
           <div className="hero__ctas" data-reveal style={{ transitionDelay: "330ms" }}>
             {regCta}

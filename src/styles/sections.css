@@ -1269,6 +1269,37 @@
 .devband__tags i { display: inline-flex; }
 .devband__tags i + i::before { content: "|"; margin: 0 9px; color: rgba(34, 211, 238, 0.35); }
 
+/* Kannada developer credit (rendered under the English one) */
+.devband__name-kn {
+  margin-top: 6px;
+  font-family: "Noto Sans Kannada", var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 3vw, 1.4rem);
+  line-height: 1.5;
+  color: rgba(244, 246, 246, 0.92);
+}
+.devband__role-kn {
+  margin-top: 2px;
+  font-family: "Noto Sans Kannada", var(--font-sans);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: rgba(244, 246, 246, 0.6);
+}
+.devband__tags-kn {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2px 0;
+  margin-top: 4px;
+  font-family: "Noto Sans Kannada", var(--font-sans);
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: rgba(244, 246, 246, 0.48);
+}
+.devband__tags-kn i { display: inline-flex; }
+.devband__tags-kn i + i::before { content: "|"; margin: 0 8px; color: rgba(34, 211, 238, 0.32); }
+
 /* ---------- plane towing the ASTRA-2026 name (hero arcade overlay) ----------
    The plane's back is tied to the wordmark; it flies across the hero pulling
    the letter chain, which ripples like tow cloth behind it. */

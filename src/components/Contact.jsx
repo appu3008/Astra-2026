@@ -62,11 +62,20 @@ export default function Contact() {
         <div className="cta" data-reveal>
           <div>
             <h3>
-              Seats on event day are <em>limited.</em>
+              {form ? (
+                <>
+                  Seats on event day are <em>limited.</em>
+                </>
+              ) : (
+                <>
+                  Registration is now <em>closed.</em>
+                </>
+              )}
             </h3>
             <p className="cta__note">
-              Register your child or your school batch through the official Google Form. One student, one registration —
-              carry a school ID on exam day for verification.
+              {form
+                ? "Register your child or your school batch through the official Google Form. One student, one registration — carry a school ID on exam day for verification."
+                : "Online registration for ASTRA-2026 has ended. Registered students should reach the venue on 15 November 2026 by 7:30 AM with a school ID for verification."}
             </p>
           </div>
           <div className="cta__actions">
@@ -75,19 +84,21 @@ export default function Contact() {
                 Register Now
               </a>
             ) : (
-              <span className="btn btn--gold" style={{ opacity: 0.55, pointerEvents: "none" }}>
-                Register Now
+              <span className="btn btn--gold" style={{ opacity: 0.55, pointerEvents: "none" }} aria-disabled="true">
+                Registration Closed
               </span>
             )}
             <a className="btn btn--line" href={CONTENT.links.map} target="_blank" rel="noopener noreferrer">
               <Navigation />
               Get Directions
             </a>
-            {!form && <p className="cta__hint">Google Form link goes live shortly.</p>}
-            <p className="cta__closing">
-              <i aria-hidden="true" />
-              Registrations close soon — limited seats. Don't wait for the last day.
-            </p>
+            {!form && <p className="cta__hint">Registrations for ASTRA-2026 are now closed.</p>}
+            {form && (
+              <p className="cta__closing">
+                <i aria-hidden="true" />
+                Registrations close soon — limited seats. Don't wait for the last day.
+              </p>
+            )}
           </div>
 
           <Payband tone="amber" />

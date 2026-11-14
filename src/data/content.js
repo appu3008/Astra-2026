@@ -193,7 +193,9 @@ export const CONTENT = {
   },
 
   links: {
-    registration: "https://docs.google.com/forms/d/e/1FAIpQLScD4et4i6XzejzqyjvbnI_Xvh7CroGYOkZHYi4mm2n3Lqi4qA/viewform?usp=header",
+    // Registration CLOSED on 14 Nov 2026 (exam day). To reopen, restore:
+    // "https://docs.google.com/forms/d/e/1FAIpQLScD4et4i6XzejzqyjvbnI_Xvh7CroGYOkZHYi4mm2n3Lqi4qA/viewform?usp=header"
+    registration: "",
     map: "https://www.google.com/maps/search/?api=1&query=RDS+Campus+Laxmi+Nagar+Near+BEO+Office+Mudalgi+591312",
   },
 };

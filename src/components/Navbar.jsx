@@ -38,9 +38,9 @@ export default function Navbar({ winners = false }) {
         Register Now
       </a>
     ) : (
-      <a className={cls} href={winners ? "/#contact" : "#contact"} onClick={() => setOpen(false)}>
-        Register Now
-      </a>
+      <span className={cls} style={{ opacity: 0.55, pointerEvents: "none" }} aria-disabled="true">
+        Registration Closed
+      </span>
     );
 
   return (
